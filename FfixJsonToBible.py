@@ -40,8 +40,8 @@ class FixJsonToBible:
                 if book_name not in new_book:
                     new_book[book_name] = {}
                 if chapter not in new_book[book_name]:
-                    new_book[book_name][chapter] = []
-                new_book[book_name][chapter].append({'verse': verse['verse'], 'text': verse['text']})
+                    new_book[book_name][chapter] = {}
+                new_book[book_name][chapter][str(verse['verse'])] = {'text': verse['text']}
 
         with open(self.new_file_name, 'w', encoding='utf-8') as outfile:
             json.dump(new_book, outfile, ensure_ascii=False, indent=4)
@@ -56,8 +56,8 @@ class FixJsonToBible:
 if __name__ == '__main__':
     
     file_paths = {
-        'book': 'C:\\_dev\\ProjetoCGU\\BibleApp\\biblia_ara\\book.json',
-        'verse': 'C:\\_dev\\ProjetoCGU\\BibleApp\\biblia_ara\\verse.json'
+        'book': 'C:\\_dev\\gcu-proj\\BibleApp\\biblia_ara\\book.json',
+        'verse': 'C:\\_dev\\gcu-proj\\BibleApp\\biblia_ara\\verse.json'
     }
     
     FixJsonToBible(file_paths)
