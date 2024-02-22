@@ -1,0 +1,13 @@
+ /* Personalização adicional */
+ body {
+    background-color: #f8f9fa; /* Cor de fundo clara */
+  }
+  .navbar {
+    background-color: #ffffff; /* Barra de navegação clara */
+  }
+  .container {
+    padding-top: 20px;
+  }
+  .offcanvas.show {
+    width: 100%;
+  }
